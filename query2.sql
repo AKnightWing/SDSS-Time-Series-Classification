@@ -5,9 +5,9 @@ SELECT
   p.modelMag_r as flux_r, p.modelMagErr_r as flux_err_r,
   p.modelMag_i as flux_i, p.modelMagErr_i as flux_err_i,
   p.modelMag_z as flux_z, p.modelMagErr_z as flux_err_z
-INTO mydb.tempPrepTSv2
+INTO mydb.tempPrepTS
 FROM detectionindex d
 JOIN PhotoObjAll p ON d.objid=p.objid
 JOIN Field f ON p.fieldid=f.fieldid
-INNER JOIN mydb.DescThingsTablev5 mine ON mine.thingid = d.thingid
+INNER JOIN mydb.DescThingsTable mine ON mine.thingid = d.thingid
 ORDER BY 1;
